@@ -18,7 +18,12 @@
         android:id="@+id/adviceFragment"
         android:name="lab.chevalier.bmi.AdviceFragment"
         android:label="Saran"
-        tools:layout="@layout/fragment_advice" />
+        tools:layout="@layout/fragment_advice" >
+        <argument
+            android:name="kategori"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="lab.chevalier.bmi.AboutFragment"
