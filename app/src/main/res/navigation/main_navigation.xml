@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="lab.chevalier.bmi.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="BMI"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_adviceFragment"
             app:destination="@id/adviceFragment" />
@@ -17,11 +17,11 @@
     <fragment
         android:id="@+id/adviceFragment"
         android:name="lab.chevalier.bmi.AdviceFragment"
-        android:label="fragment_advice"
+        android:label="Saran"
         tools:layout="@layout/fragment_advice" />
     <fragment
         android:id="@+id/aboutFragment"
         android:name="lab.chevalier.bmi.AboutFragment"
-        android:label="fragment_about"
+        android:label="About Me"
         tools:layout="@layout/fragment_about" />
 </navigation>
