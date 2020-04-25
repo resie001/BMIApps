@@ -1,6 +1,8 @@
 package lab.chevalier.bmi
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -54,6 +56,8 @@ class HomeFragment : Fragment() {
         binding.btnHitung.setOnClickListener { check() }
 
         binding.btnSaran.setOnClickListener { it.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAdviceFragment(kategori)) }
+
+        binding.btnShare.setOnClickListener { share() }
     }
 
     private fun check(){
@@ -157,6 +161,23 @@ class HomeFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun share(){
+
+        val tipeBadan = binding.tvKategori.text
+
+        val text = """
+            Nama : Ade Resie Muchorobbi Setiawan
+            Hasil BMi : $bmi
+            Kategori : $tipeBadan
+        """.trimIndent()
+
+        val intent = Intent(Intent.ACTION_SENDTO)
+        intent.data = Uri.parse("mailto:")
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Hasil BMI")
+        intent.putExtra(Intent.EXTRA_TEXT, text)
+        startActivity(intent)
     }
 
 }
