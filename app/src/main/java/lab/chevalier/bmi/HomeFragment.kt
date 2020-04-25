@@ -52,6 +52,8 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         binding.btnHitung.setOnClickListener { check() }
+
+        binding.btnSaran.setOnClickListener { it.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAdviceFragment(kategori)) }
     }
 
     private fun check(){
