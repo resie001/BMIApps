@@ -173,11 +173,10 @@ class HomeFragment : Fragment() {
             Kategori : $tipeBadan
         """.trimIndent()
 
-        val intent = Intent(Intent.ACTION_SENDTO)
-        intent.data = Uri.parse("mailto:")
+        val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:aderesie.m.s@gmail.com"))
         intent.putExtra(Intent.EXTRA_SUBJECT, "Hasil BMI")
         intent.putExtra(Intent.EXTRA_TEXT, text)
-        startActivity(intent)
+        startActivity(Intent.createChooser(intent, "Email via..."))
     }
 
 }
